@@ -1,0 +1,15 @@
+.font-semibold {
+    font-weight: 600;
+}
+
+.span {
+    font-size: 13px !important;
+    font-weight: 900 !important;
+}
+
+.tooltip {
+    top: 21px;
+    left: 58px;
+}
+
+

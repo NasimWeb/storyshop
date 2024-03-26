@@ -1,0 +1,118 @@
+ 
+
+.topbar {
+    background-color: #141417;
+    color: #fff;
+}
+
+.date {
+    background-color: #141417;
+}
+
+.rdrDefinedRangesWrapper {
+    background:  rgb(39 39 42)!important;
+}
+
+.rdrDateDisplayWrapper {
+    background: #141417!important;
+}
+
+.rdrMonthAndYearWrapper {
+    background: #141417!important;
+    color: #fff!important;
+}
+
+.rdrMonths .rdrMonthsVertical {
+    background: #141417!important;
+    color: #fff!important;
+}
+
+.rdrMonth {
+    background: rgb(39 39 42)!important;
+    color: #fff!important;
+}
+
+
+.rdrDayNumber span{
+    color: #fff!important;
+}
+
+.rdrMonthPicker select {
+    background: #141417!important;
+    color: #fff !important;
+}
+
+.rdrYearPicker select {
+    background: #141417!important;
+    color: #fff !important;
+}
+
+.date-picker {
+    position: absolute;
+    top: 47px;
+    right: 0;
+}
+
+.rdrStaticRangeLabel:hover {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+
+.rdrPprevButton  i {
+    color: #fff !important;
+}
+
+
+.search-input:focus-visible {
+    border-color: rgb(39 39 42 / 1) !important;
+}
+
+/* hamburger  menu*/
+
+.hamburger {
+    height: 50px;
+    width: 50px;
+    transform: 0.2s;
+    position: relative;
+  }
+  .hamburger .checkbox {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+  .line {
+    transition: 0.5s;
+    stroke-width: 6px;
+    stroke: white;
+  }
+  .lineTop {
+    stroke-dasharray: 40 40;
+    stroke-dashoffset: 25;
+  }
+  .lineBottom {
+    stroke-dasharray: 40 40;
+    stroke-dashoffset: 60;
+  }
+  .lineMid {
+    stroke-dasharray: 40 40;
+  }
+  .hamburger .checkbox:checked + svg .line {
+    stroke: crimson;
+  }
+  .hamburger .checkbox:checked + svg .lineTop {
+    stroke-dashoffset: 0;
+    transform-origin: left;
+    transform: rotateZ(45deg) translate(-7px, -5px);
+  }
+  .hamburger .checkbox:checked + svg .lineMid {
+    stroke-dashoffset: 40;
+  }
+  .hamburger .checkbox:checked + svg .lineBottom {
+    stroke-dashoffset: 0;
+    transform-origin: left;
+    transform: rotateZ(-45deg) translate(-5px, 5px);
+  }
+  

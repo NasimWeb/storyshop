@@ -1,0 +1,19 @@
+.MuiDataGrid-columnHeaderTitle {
+    color: #fff !important;
+}
+
+.MuiDataGrid-cellContent {
+    color: #fff !important;
+}
+
+.MuiSvgIcon-root {
+    color: #fff !important;
+}
+
+.MuiTablePagination-displayedRows  {
+    color: #fff !important;
+}
+
+.MuiDataGrid-virtualScrollerRenderZone  {
+    gap: 7px !important;
+}
