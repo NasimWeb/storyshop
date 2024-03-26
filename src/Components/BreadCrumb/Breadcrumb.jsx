@@ -31,7 +31,7 @@ export default function Breadcrumb({current}) {
         <p className='text-white text-zinc-400 text-sm  cursor-pointer hover:text-blue-500 active:text-blue-500 transition-all duration-300 ease-in-out' onClick={() => prevRout()} underline="hover" color="#fff" >
         <i class="fa-solid fa-arrow-left mr-1"></i> back to List
         </p>
-        <Typography color="text.primary">{current}</Typography>
+        <Typography color="white">{current}</Typography>
       </Breadcrumbs>
     </div>
     </div>

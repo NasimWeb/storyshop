@@ -165,7 +165,7 @@ export default function Users() {
     <div className='bg-zinc-900 flex flex-col gap-10'>
 
       {
-        data.length && (
+        data.length ? (
 
     <Box sx={{ height: '100vh', width: '100%' }} >
     <DataGrid
@@ -184,6 +184,8 @@ export default function Users() {
       disableRowSelectionOnClick
     />
   </Box>
+        ) : (
+          <p className='text-white'>this API limiited you need to turn on your vpn to see users</p> 
         )
       }
       
