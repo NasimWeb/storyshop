@@ -14,7 +14,7 @@ export default function Comments() {
   }, []);
 
   return (
-    <div className="comments flex-1 flex flex-wrap w-full hidden lg:block  bg-zinc-900 p-5 rounded-lg" style={{height : '508px', maxWidth : 'fit-content'}}>
+    <div className="comments flex-1 flex flex-wrap w-full hidden lg:block  bg-zinc-900 p-5 rounded-lg" style={{height : '508px', maxWidth : '100%'}}>
       <div className="">
         <div className="flex flex-wrap flex-col lg:flex-row justify-between items-center mb-2">
           <h1 className="text-white text-2xl font-bold">Comments</h1>
