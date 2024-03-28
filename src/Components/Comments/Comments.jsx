@@ -14,11 +14,11 @@ export default function Comments() {
   }, []);
 
   return (
-    <div className="comments flex-1  w-full  bg-zinc-900 p-5 rounded-lg" style={{height : '508px'}}>
+    <div className="comments flex-1 flex flex-wrap w-full hidden lg:block  bg-zinc-900 p-5 rounded-lg" style={{height : '508px', maxWidth : 'fit-content'}}>
       <div className="">
-        <div className="flex justify-between items-center mb-2">
+        <div className="flex flex-wrap flex-col lg:flex-row justify-between items-center mb-2">
           <h1 className="text-white text-2xl font-bold">Comments</h1>
-          <div className="images-user flex">
+          <div className="images-user flex flex-wrap">
             {data ? (
               data.slice(6, 9).map((user) => {
                 return (
@@ -38,14 +38,14 @@ export default function Comments() {
             )}
           </div>
         </div>
-        <div className="flex flex-col  gap-3 ">
+        <div className="flex flex-col flex-wrap gap-3 ">
           {data.length ? (
             data.slice(0, 5).map((user) => {
               return (
                 <>
                   <div
                     key={user.id}
-                    className="flex items-center justify-between "
+                    className="flex flex-wrap flex-col lg:flex-row  items-center justify-between "
                   >
                     <img
                       src={user.photo}

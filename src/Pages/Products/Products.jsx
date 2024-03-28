@@ -10,6 +10,8 @@ import { NavLink } from "react-router-dom";
 import { deleteProduct } from "../../Redux/Store/Products";
 import searchDataValue from "../../Context/SearchData";
 
+
+
 export default function Products() {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.products);
@@ -112,14 +114,17 @@ export default function Products() {
     },
   ];
 
+
+
   {
     loading && <div className="text-white">loading...</div>;
   }
 
   return (
-    <div className="bg-zinc-900">
+   
+    <div className="bg-zinc-900" style={{ width: '100%', overflowX: 'auto' }} >
       {data && (
-        <div style={{ width: "100%", overflowX: "auto", height : '100vh' }}>
+        <div style={{ width: '100%', overflowX: 'auto' }} >
             <DataGrid
               className="text-white bg-zinc-800"
               rows={searchData ? searchData : data}
@@ -131,12 +136,14 @@ export default function Products() {
                   },
                 },
               }}
-              pageSizeOptions={[5]}
+              pageSizeOptions={5}
               checkboxSelection
               disableRowSelectionOnClick
             />
         </div>
       )}
     </div>
+   
+   
   );
 }

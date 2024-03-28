@@ -15,7 +15,6 @@ import HomeChartDatas from "../../../src/Datas/HomeChartDatas";
 
 
 
-
 export default function Chart() {
 
    
@@ -38,8 +37,8 @@ export default function Chart() {
 
   return (
     
-<div style={{width:'780px' , height:'510px'}}  className="bg-zinc-900 pb-16 px-5 rounded-lg">
-<ResponsiveContainer width="100%" height='100%' className=' '>
+ <div style={{width:'780px' , height:'510px' , maxWidth : '100%'}}  className="bg-zinc-900  hidden lg:block pb-16 px-5 rounded-lg"> 
+<ResponsiveContainer width="100%" height='100%' >
     <h1 className="text-white font-bold text-2xl p-3">Chart</h1>
       <BarChart data={HomeChartDatas} >
         <CartesianGrid strokeDasharray="3 3" />
@@ -52,6 +51,14 @@ export default function Chart() {
         <Bar dataKey="freecashflow" fill="rgba(245,158,11,1)" shape={renderCustomBar} />
       </BarChart>  
     </ResponsiveContainer>
-    </div> 
+
+     </div>   
+
+
+     
+     
+
+
+
   );
 }

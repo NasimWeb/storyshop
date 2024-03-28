@@ -9,10 +9,10 @@ export default function TimeLine() {
   const { data, loading, error } = useSelector((state) => state.products);
 
   return (
-    <div className="flex flex-3 flex-wrap  flex-col w-full bg-zinc-900 px-3 py-2 rounded-lg">
+    <div className="flex flex-3 flex-wrap  flex-col w-full bg-zinc-900 px-3 py-2 rounded-lg m-full">
       <h1 className="text-white text-xl font-bold">Timeline</h1>
-      <div className="flex flex-col mt-5 gap-3 ">
-        <div className="flex gap-2 ">
+      <div className="flex flex-col mt-5  ">
+        <div className="flex gap-2 flex-wrap">
           <RocketLaunchOutlinedIcon className="text-sm " style={{color : 'red'}} />
           <p className="text-white text-sm">
             You have{" "}
@@ -27,7 +27,7 @@ export default function TimeLine() {
           data.map((product) => {
             return (
               <>
-                <div className="flex gap-1 flex-wrap items-center">
+                <div className="flex gap-1 flex-wrap flex-col lg:flex-row items-center">
                   <img src={product.image} alt=""  className="w-6 rounded-full h-auto"/>
                   <p className="text-white text-sm">
                   {product.rating.count} order was placed from Italy 

@@ -23,9 +23,9 @@ function App() {
     <DateLong.Provider value={{defaultRecordLong , setDefaultRecordLong}}>
       <ToggleSidebarState.Provider value={{toggleSidebar , setToggleSidebar}}>
       <searchDataValue.Provider value={{searchData,setSearchData}}>
-    <div className='flex w-full'>
+    <div className='flex w-full flex-wrap'>
       <Sidebar isShowSidebar={isShowSidebar} setIsShowSidebar={setIsShowSidebar} />
-      <div className='flex-[7_2_0%] flex flex-col bg-zinc-900'>
+      <div className='flex-[7_2_0%] flex flex-col bg-zinc-900 flex-wrap'>
       <Topbar isShowSidebar={isShowSidebar} setIsShowSidebar={setIsShowSidebar} />
        {router}
       </div>
