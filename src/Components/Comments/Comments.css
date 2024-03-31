@@ -1,0 +1,35 @@
+/* For WebKit browsers (e.g. Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #3B82F6; /* Color of the scrollbar thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #003180; /* Color of the scrollbar thumb on hover */
+  }
+
+  /* For Firefox */
+/* Not all Firefox versions support this at the moment */
+/* These styles are experimental and may not work in all versions */
+scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  
+  scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+  }
+  
+  scrollbar-thumb {
+    background: #3B82F6; /* Color of the scrollbar thumb */
+  }
+  
+  scrollbar-thumb:hover {
+    background: #003180; /* Color of the scrollbar thumb on hover */
+  }

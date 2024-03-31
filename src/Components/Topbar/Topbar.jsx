@@ -29,9 +29,11 @@ import Typography from "@mui/material/Typography";
 import CloseIcon from "@mui/icons-material/Close";
 import searchDataValue from "../../Context/SearchData";
 
+
+
 export default function Topbar({isShowSidebar , setIsShowSidebar}) {
   const datelong = useContext(DateLong);
-  const toogleSidebar = useContext(ToggleSidebarState);
+  const {toggleSidebar , setToggleSidebar} = useContext(ToggleSidebarState);
   const location = useLocation();
   const [isShowListSearch, setIsShowListSearch] = useState(false);
   const [searchValue, setSearchValue] = useState(null);
@@ -114,6 +116,7 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
 
   useEffect(() => {
     setSearchData(null);
+    setIsShowSidebar(false)
   }, [location.pathname]);
 
   const targetData = (id) => {
@@ -139,7 +142,7 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
 
   return (
     <div
-      className={`topbar  sticky top-0 z-10 bg-zinc-900/75 backdrop-blur-md p-3 `}
+      className={`topbar sticky top-0 z-10 bg-zinc-900/75 backdrop-blur-md p-3 `}
     >
       <div className="flex justify-between">
         <div className="sale-dashourd">
@@ -206,7 +209,7 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
 
       {location.pathname === "/*/*" ? (
         <div className="searcharea bg-zinc-900 py-3 px-2">
-          <div className="flex xl:justify-between items-center">
+          <div className="flex xl:justify-between flex-wrap items-center">
             <div className="relative flex items-center">
               <div className="absolute left-0 mr-5 top-2 px-2 flex items-center">
                 <SearchOutlinedIcon
@@ -326,7 +329,7 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
             </div>
           ) : (
             <div className="searcharea bg-zinc-900 py-3 px-2">
-              <div className="flex xl:justify-between items-center">
+              <div className="flex xl:justify-between flex-wrap items-center">
                 <div className="relative flex items-center">
                   <div className="absolute left-0 mr-5 top-2 px-2 flex items-center">
                     <SearchOutlinedIcon

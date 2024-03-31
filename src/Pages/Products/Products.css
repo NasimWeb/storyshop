@@ -1,0 +1,12 @@
+
+
+
+@media (max-width: 768px) {
+    
+    .grid-data {
+        width: 380px !important;
+        overflow: auto;
+        display: flex;
+        justify-content: center;
+    }
+}

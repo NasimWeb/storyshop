@@ -91,10 +91,10 @@ export default function Cart() {
 
   return (
      <div className='bg-zinc-900 flex flex-col gap-10'>
-
+        <div className="grid-data"  style={{  width: '100%', overflow: "auto", height :'100%' }}>
       {
         data && (
-      <Box sx={{ height: '100vh', width: '100%' }} >
+      <Box sx={{ height: '100vh', width: '100%', overflowX : 'auto' }} >
       <DataGrid
       className='text-white bg-zinc-800'
         rows={searchData ? searchData : data}
@@ -113,7 +113,7 @@ export default function Cart() {
       </Box>
         )
       }
-      
+      </div>
     </div>
   )
 }

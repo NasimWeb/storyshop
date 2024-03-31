@@ -10,8 +10,6 @@ import { NavLink } from "react-router-dom";
 import { deleteProduct } from "../../Redux/Store/Products";
 import searchDataValue from "../../Context/SearchData";
 
-
-
 export default function Products() {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.products);
@@ -114,36 +112,32 @@ export default function Products() {
     },
   ];
 
-
-
   {
     loading && <div className="text-white">loading...</div>;
   }
 
   return (
    
-    <div className="bg-zinc-900" style={{ width: '100%', overflowX: 'auto' }} >
-      {data && (
-        <div style={{ width: '100%', overflowX: 'auto' }} >
-            <DataGrid
-              className="text-white bg-zinc-800"
-              rows={searchData ? searchData : data}
-              columns={columns}
-              initialState={{
-                pagination: {
-                  paginationModel: {
-                    pageSize: 10,
-                  },
-                },
-              }}
-              pageSizeOptions={5}
-              checkboxSelection
-              disableRowSelectionOnClick
-            />
-        </div>
-      )}
+
+    <div className="bg-zinc-900  sm:w-[370px] lg:w-full" style={{   width: '100%' ,overflow: "auto", height :'100vh' }}>
+      <div className="grid-data"  style={{  width: '100%', overflow: "auto", height :'100%' }}>
+      <DataGrid
+        className="text-white bg-zinc-800 w-full"
+        rows={searchData ? searchData : data}
+        columns={columns}
+        initialState={{
+          pagination: {
+            paginationModel: {
+              pageSize: 10,
+            },
+          },
+        }}
+        pageSizeOptions={5}
+        disableSelectionOnClick
+        pageSize={4}
+        checkboxSelection
+      />
+      </div>
     </div>
-   
-   
   );
 }
