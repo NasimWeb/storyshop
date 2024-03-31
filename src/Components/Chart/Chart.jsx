@@ -120,7 +120,7 @@ export default function Chart() {
             dataKey="freecashflow"
             stroke="rgba(245,158,11,1)"
           />
-          <Scatter dataKey="cnt" fill="#8884d8" />
+          <Scatter dataKey="cnt" fill="#EF4444" />
         </ComposedChart>
       </ResponsiveContainer>
 
