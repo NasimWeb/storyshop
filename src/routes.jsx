@@ -15,7 +15,8 @@ const routes = [
     {path : '/users' , element: <Users />},
     {path : '/product/:productId' , element: <SingleProduct />},
     {path : '/cart/:cartId', element:<SingleCart />  },
-    {path : '/user/:userId', element:<SingleUser />  }
+    {path : '/user/:userId', element:<SingleUser />  },
+   
 ]
 
 

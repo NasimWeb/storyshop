@@ -21,7 +21,7 @@ export default function Users() {
     );
   }, []);
 
-  console.log(data);
+  
 
   const removeUser = () => {
     Swal.fire({

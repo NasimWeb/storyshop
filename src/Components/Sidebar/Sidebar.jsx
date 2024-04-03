@@ -9,12 +9,16 @@ import JoinFullIcon from '@mui/icons-material/JoinFull';
 import CategoryIcon from '@mui/icons-material/Category';
 import ToggleSidebarState from '../../Context/ToggleSidebarState'
 import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
+import AdminUser from "../../Context/Athorization";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 export default function Sidebar({isShowSidebar , setIsShowSidebar}) {
 
   const [isShowProductDropDown , setIsShowProductDropDown] = useState(false)
   const {toggleSidebar , setToggleSidebar} = useContext(ToggleSidebarState)
+  const {username , setUsername , password , setPassword , setIsUserLoggedIn} = useContext(AdminUser)
+
 
  
 
@@ -77,6 +81,10 @@ export default function Sidebar({isShowSidebar , setIsShowSidebar}) {
           <GroupOutlinedIcon style={{fontSize:'medium', color : '#000'}} />
           {toggleSidebar ? '' : <li className='cursor-pointer  w-full flex list-none items-start overflow-hidden whitespace-nowrap'>Users</li>}
           </NavLink>
+          <NavLink  onClick={() => setIsUserLoggedIn(false)} className={`sidebar-links mb-2 px-3 py-2 gap-2 flex  cursor-pointer overflow-hidden rounded-xl hover:text-zinc-100  transition-all duration-300 ease-in-out hover:text-zinc-100   `}> 
+         <LogoutIcon style={{fontSize:'medium', color : '#000'}} />
+          Logout
+         </NavLink>
           
         </ul>
       </div>
