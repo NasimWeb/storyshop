@@ -46,7 +46,7 @@ const { setIsUserLoggedIn} = useContext(AdminUser)
   };
 
 
- console.log('errors =>' , errors);
+
 
 
   return (
@@ -103,11 +103,10 @@ const { setIsUserLoggedIn} = useContext(AdminUser)
                   }
                 })}
                 type="password"
-               
                 id="password"
                 placeholder=""
               />
-             <p className="text-red-600"> {errors.password && errors.password.message }</p>
+             <p className="text-red-600">{errors.password && errors.password.message }</p>
             </div>
             <button className="sign">
               Login

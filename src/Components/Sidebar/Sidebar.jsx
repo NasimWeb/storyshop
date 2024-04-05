@@ -83,7 +83,7 @@ export default function Sidebar({isShowSidebar , setIsShowSidebar}) {
           </NavLink>
           <NavLink  onClick={() => setIsUserLoggedIn(false)} className={`sidebar-links mb-2 px-3 py-2 gap-2 flex  cursor-pointer overflow-hidden rounded-xl hover:text-zinc-100  transition-all duration-300 ease-in-out hover:text-zinc-100   `}> 
          <LogoutIcon style={{fontSize:'medium', color : '#000'}} />
-          Logout
+          {toggleSidebar ? '' : <li className='cursor-pointer  w-full flex list-none items-start overflow-hidden whitespace-nowrap'>Logout</li>}
          </NavLink>
           
         </ul>

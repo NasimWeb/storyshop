@@ -37,7 +37,11 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
   const location = useLocation();
   const [isShowListSearch, setIsShowListSearch] = useState(false);
   const [searchValue, setSearchValue] = useState(null);
-  const { searchData, setSearchData } = useContext(searchDataValue);
+  const {searchData, setSearchData} = useContext(searchDataValue);
+  const [fontCountSize , setFountCountSize] = useState(14);
+  const [ isShowModalSetting,setIsShowModalSetting] = useState(false)
+
+
 
   const [selectedRange, setSelectedRange] = useState([
     {
@@ -141,6 +145,16 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
   };
 
   return (
+    <>
+    <style>
+      {
+        `
+        body {
+        font-size: ${fontCountSize}px;
+        }
+        `
+      }
+    </style>
     <div
       className={`topbar sticky top-0 z-10 bg-zinc-900/75 backdrop-blur-md p-3 `}
     >
@@ -149,8 +163,6 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
           <p className=" text-zinc-500 text-[12px]">Pages / Dashboard</p>
           <p className=" font-bold p-1">Sales</p>
         </div>
-
-          
 
         <div className="notifs flex gap-5 relative ">
           <div className="relative text-sm text-zinc-500 p-1.5 cursor-pointer transition-all duration-300 ease-in-out hover:text-blue-500 dark:hover:text-blue-500 active:text-blue-500">
@@ -167,8 +179,25 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
               <span className="relative inline-flex h-3 w-3 rounded-full bg-red-500"></span>
             </span>
           </div>
-          <div className="relative text-sm text-zinc-500 p-1.5 cursor-pointer transition-all duration-300 ease-in-out hover:text-blue-500 dark:hover:text-blue-500 active:text-blue-500">
-            <SettingsOutlinedIcon />
+          <div onClick={() => setIsShowModalSetting(true)} onMouseLeave={() => setIsShowModalSetting(false)} className="relative text-sm text-zinc-500 p-1.5 cursor-pointer transition-all duration-300 ease-in-out hover:text-blue-500 dark:hover:text-blue-500 active:text-blue-500">
+            <SettingsOutlinedIcon   />
+            <div className={`absolute bg-black p-5 mb-2  ${isShowModalSetting ? 'block' : 'hidden'}`} style={{right : '25px' , top : '29px' , width : '150px' , height : 'auto' , zIndex : '9999'}}>
+               <p className="ml-3">Font Size:</p>
+               <div className="flex items-center justify-evenly mb-4">
+                <button className="text-zinc-500" style={{fontSize : '15px', cursor : 'pointer'}} onClick={() => {
+                  setFountCountSize(prevState => prevState - 1)
+                }}><i class="fa-solid fa-minus"></i></button>
+                <span className="text-zinc-500">{fontCountSize}</span>
+                <button className="text-zinc-500" style={{fontSize : '15px', cursor : 'pointer'}} onClick={() => setFountCountSize(prevstate => prevstate + 1)}><i class="fa-solid fa-plus"></i></button>
+               </div>
+               <p className="ml-3 mb-2">Dark mode:</p>
+               <div className="flex gap-4 ml-3"> 
+               <i class="fa-solid fa-moon"></i>
+               <i class="fa-solid fa-sun"></i>
+               <i class="fa-solid fa-laptop"></i>
+               </div>
+
+            </div>
             <span className="absolute end-0 top-0 flex h-3 w-3">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
               <span className="relative inline-flex h-3 w-3 rounded-full bg-red-500"></span>
@@ -446,5 +475,6 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
         </>
       )}
     </div>
+    </>
   );
 }

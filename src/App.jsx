@@ -19,7 +19,10 @@ function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   
 
+
   return (
+    <>
+    
     <AdminUser.Provider
       value={{setIsUserLoggedIn}}
     >
@@ -50,6 +53,7 @@ function App() {
         </ToggleSidebarState.Provider>
       </DateLong.Provider>
     </AdminUser.Provider>
+    </>
   );
 }
 
