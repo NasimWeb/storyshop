@@ -181,7 +181,7 @@ export default function Users() {
             />
           </Box>
         ) : (
-          <p className="dark:text-white text-black bg-white">
+          <p className="dark:text-white text-black bg-white dark:bg-zinc-900">
             this API limiited you need to turn on your vpn to see users
           </p>
         )}
