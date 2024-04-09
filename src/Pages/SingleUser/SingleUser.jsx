@@ -10,7 +10,6 @@ import PhotoSizeSelectActualOutlinedIcon from "@mui/icons-material/PhotoSizeSele
 export default function SingleUser() {
 
 
-
 const param = useParams()
 const {data,loading,error} = useSelector(state => state.users)
 const dispatch = useDispatch()
@@ -19,7 +18,6 @@ const dispatch = useDispatch()
  const mainUser = data.find(user => user.id == param.userId)
 
  
-
  const [userId,setUserId] = useState(mainUser ? mainUser.id :  getCookieValue('user_id'))
  const [userName, setUserName] = useState(mainUser ? mainUser.name : getCookieValue('user_name'))
  const [userCompany , setUserCompany] = useState(mainUser ? mainUser.company : getCookieValue('user_Company'))
@@ -76,7 +74,6 @@ console.log(getCookieValue('user_State'));
  },[])
 
 
- 
 
  useEffect(() => {
   
@@ -95,24 +92,22 @@ console.log(getCookieValue('user_State'));
 
 
 
-
-
   return (
-    <div style={{ background: "#09090b" }} className="grid grid-cols-12 gap-2">
+    <div  className="grid grid-cols-12 gap-2 dark:bg-black bg-zinc-100">
     <div
-      style={{ background: "#09090b" }}
-      className="p-4 col-span-12 lg:col-span-9 "
+     
+      className="p-4 col-span-12 lg:col-span-9 dark:bg-black bg-zinc-100"
     >
-      <h1 className="font-bold text-3xl text-white">user Edit</h1>
+      <h1 className="font-bold text-3xl dark:text-white text-dark">user Edit</h1>
 
       <form
-        className="bg-zinc-900 my-8 flex flex-col flex-wrap rounded-xl p-2"
+        className="dark:bg-zinc-900 bg-white my-8 flex flex-col flex-wrap rounded-xl p-2"
         action=""
       >
         <h1 className="text-white  font-bold text-xl mb-5">General Info</h1>
 
         <div className="grid grid-cols-12   gap-4">
-          <div className="col-span-12 text-white  lg:col-span-6 ">
+          <div className="col-span-12 dark:text-white text-black  lg:col-span-6 ">
             <label
               htmlFor="ID"
               className="text-sm mb-2 inline-block w-full cursor-pointer"
@@ -127,10 +122,10 @@ console.log(getCookieValue('user_State'));
               className="w-full disabled:border-zinc-600 disabled:opacity-50 disabled:shadow-none search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
             />
           </div>
-          <div className="col-span-12 text-white  lg:col-span-6">
+          <div className="col-span-12 dark:text-white text-black lg:col-span-6">
             <label
               htmlFor="Title"
-              className="text-sm mb-2 inline-block w-full cursor-pointer"
+              className="text-sm mb-2 inline-block w-full cursor-pointer dark:text-white text-black "
             >
               Name
             </label>
@@ -139,94 +134,93 @@ console.log(getCookieValue('user_State'));
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               placeholder="name"
-              className="w-full search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+              className="w-full search-input dark:bg-zinc-800 bg-zinc-100 dark:text-white text-black  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
             />
           </div>
           
-          <div className="col-span-12 text-white  ">
-            <label htmlFor="Rate">Company</label>
+          <div className="col-span-12 dark:text-white text-black ">
+            <label htmlFor="Rate" className='dark:text-white text-black' >Company</label>
             <input
               type="text"
               value={userCompany}
               onChange={(e) => setUserCompany(e.target.value)}
               placeholder="company"
-              className="w-full search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+              className="w-full search-input dark:bg-zinc-800 bg-zinc-100 dark:text-white text-black  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
             />
           </div>
 
-          <div className="col-span-12 lg:col-span-6 text-white ">
-            <label htmlFor="price">Username</label>
+          <div className="col-span-12 lg:col-span-6 dark:text-white text-black ">
+            <label htmlFor="price" >Username</label>
             <input
               type="text"
               placeholder="price"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+              className="w-full search-input dark:bg-zinc-800 bg-zinc-100 dark:text-white text-black  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
             />
           </div>
 
-          <div className="col-span-12 lg:col-span-6 text-white ">
+          <div className="col-span-12 lg:col-span-6 dark:text-white text-black">
             <label htmlFor="Rate">Email</label>
             <input
               type="text"
               value={userEmail}
               onChange={(e) => setUserEmail(e.target.value)}
               placeholder="Rate"
-              className="w-full search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+              className="w-full search-input dark:bg-zinc-800 bg-zinc-100  dark:text-white text-black p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
             />
           </div>
 
-          <div className="col-span-12 lg:col-span-6 text-white ">
+          <div className="col-span-12 lg:col-span-6 dark:text-white text-black ">
             <label htmlFor="Rate">Address</label>
             <input
               type="text"
               value={userAddress}
               onChange={(e) => setUserAddress(e.target.value)}
               placeholder="Rate"
-              className="w-full search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+              className="w-full search-input dark:bg-zinc-800 bg-zinc-100 dark:text-white text-black p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
             />
           </div>
 
-          <div className="col-span-12 lg:col-span-6 text-white ">
+          <div className="col-span-12 lg:col-span-6 dark:text-white text-black ">
             <label htmlFor="Rate">State</label>
             <input
               type="text"
               value={userState}
               onChange={(e) => setUserState(e.target.value)}
               placeholder="Rate"
-              className="w-full search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+              className="w-full search-input dark:bg-zinc-800  bg-zinc-100 dark:text-white text-black p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
             />
           </div>
-          <div className="col-span-12 lg:col-span-6 text-white ">
+          <div className="col-span-12 lg:col-span-6 dark:text-white text-black ">
             <label htmlFor="Rate">Country</label>
             <input
               type="text"
               value={userCountry}
               onChange={(e) => setUserCountry(e.target.value)}
               placeholder="country"
-              className="w-full search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+              className="w-full search-input dark:bg-zinc-800 bg-zinc-100 dark:text-white text-black p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
             />
           </div>
-          <div className="col-span-12 lg:col-span-6 text-white ">
-            <label htmlFor="Rate">Phone</label>
+          <div className="col-span-12 lg:col-span-6 dark:text-white text-black ">
+            <label htmlFor="Rate dark:text-white text-black">Phone</label>
             <input
               type="text"
               value={userPhone}
               onChange={(e) => setUserPhone(e.target.value)}
               placeholder="Rate"
-              className="w-full search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+              className="w-full search-input dark:bg-zinc-800 bg-zinc-100 text-black p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
             />
           </div>
-         
-
-        
         </div>
       </form>
 
+
+
    
 
-      <div className="bg-zinc-900 my-8 flex flex-col flex-wrap rounded-xl p-2">
-        <h1 className="font-bold text-3xl text-white my-5">Image</h1>
+      <div className="dark:bg-zinc-900 bg-white text-black my-8 flex flex-col flex-wrap rounded-xl p-2">
+        <h1 className="font-bold text-3xl dark:text-white text-black my-5">Image</h1>
         <div className="mt-2 flex justify-center rounded-lg border border-dashed border-zinc-500/25 px-6 py-10 dark:border-zinc-500/50">
           <div className="mt-2 flex flex-col justify-center rounded-lg  px-6 py-10 dark:border-zinc-500/50">
             <PhotoSizeSelectActualOutlinedIcon
@@ -258,8 +252,8 @@ console.log(getCookieValue('user_State'));
       </div>
     </div>
 
-    <div className="col-span-12 sticky top-36 lg:col-span-3  bg-zinc-900 mt-20 flex flex-col flex-wrap rounded-xl p-4 h-fit">
-      <h1 className="text-white font-bold text-xl mb-5">Preview</h1>
+    <div className="col-span-12 sticky top-36 lg:col-span-3  dark:bg-zinc-900 bg-white mt-20 flex flex-col flex-wrap rounded-xl p-4 h-fit">
+      <h1 className="dark:text-white text-black font-bold text-xl mb-5">Preview</h1>
 
       <img
         src={`${userPhoto}`}

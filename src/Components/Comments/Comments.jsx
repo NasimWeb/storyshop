@@ -14,7 +14,7 @@ export default function Comments() {
   }, []);
 
   return (
-    <div className="comments flex-1 flex flex-wrap w-full justify-center bg-zinc-900 p-5 rounded-lg" style={{height : '508px', maxWidth : '100%'}}>
+    <div className="comments  flex-1  flex-wrap w-full justify-center dark:bg-zinc-900 bg-white   p-5 rounded-lg" style={{height : '508px', maxWidth : '100%'}}>
       <div className="">
         <div className="flex flex-wrap flex-col lg:flex-row justify-between items-center mb-2">
           <h1 className="text-white text-2xl font-bold">Comments</h1>
@@ -31,7 +31,7 @@ export default function Comments() {
                 );
               })
             ) : (
-              <p className="text-white">
+              <p className="dark:text-white text-black">
                 if you cant't see comments beacuse of you must turn on your vpn
                 to see them
               </p>
@@ -60,8 +60,8 @@ export default function Comments() {
                   </div>
                   <div style={{ marginTop: "-26px" }}>
                     <span className="text-gray-500 ml-16 mr-1">on</span>
-                    <b className="text-white text-sm">{user.company}</b>
-                    <div className="text-white ml-16 text-xs">
+                    <b className="dark:text-white text-black text-sm">{user.company}</b>
+                    <div className="dark:text-white text-black ml-16 text-xs">
                       Very high-quality product and arrived quickly.
                     </div>
                   </div>
@@ -69,7 +69,7 @@ export default function Comments() {
               );
             })
           ) : (
-            <p className="text-white">
+            <p className="dark:text-white text-black">
               if you can't see comments because of you must turn on your VPN to
               see them
             </p>

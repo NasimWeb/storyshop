@@ -17,3 +17,11 @@
 .MuiDataGrid-virtualScrollerRenderZone  {
     gap: 7px !important;
 }
+
+body.dark .MuiDataGrid-cellContent {
+    color: #fff !important;
+}
+
+body .MuiDataGrid-cellContent {
+    color: #000 !important;
+}

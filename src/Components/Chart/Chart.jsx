@@ -1,17 +1,8 @@
 import React from "react";
 import "./Chart.css";
-// import {
-//   BarChart,
-//   Bar,
-//   Rectangle,
-//   XAxis,
-//   YAxis,
-//   CartesianGrid,
-//   Tooltip,
-//   Legend,
-//   ResponsiveContainer,
-// } from "recharts";
 import HomeChartDatas from "../../../src/Datas/HomeChartDatas";
+
+
 
 import {
   ComposedChart,
@@ -90,7 +81,7 @@ export default function Chart() {
   };
 
   return (
-    <div className="bg-zinc-900  pb-16 px-5 rounded-lg" style={{ width: '100%',maxWidth: '780px',margin: '0 auto' ,height: '500px' }}>
+    <div className=" dark:bg-zinc-900 bg-white pb-16 px-5 rounded-lg" style={{ width: '100%',maxWidth: '780px',margin: '0 auto' ,height: '500px' }}>
       <h1 className="text-white font-bold text-2xl p-3">Chart</h1>
 
       <ResponsiveContainer width="100%" height={500}>

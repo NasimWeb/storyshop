@@ -55,7 +55,7 @@ export default function Cart() {
           width: 150,
           editable: true,
           renderCell : (params) =>  {
-           return <p className='text-white'>{cartData ? cartData.slice(0,10) : params.row.date.slice(0,10)}</p>
+           return <p className='dark:text-white text-dark'>{cartData ? cartData.slice(0,10) : params.row.date.slice(0,10)}</p>
           }
         },
         {
@@ -96,7 +96,7 @@ export default function Cart() {
         data && (
       <Box sx={{ height: '100vh', width: '100%', overflowX : 'auto' }} >
       <DataGrid
-      className='text-white bg-zinc-800'
+      className='dark:text-white dark:bg-zinc-800  bg-white text-dark'
         rows={searchData ? searchData : data}
         columns={columns}
         initialState={{

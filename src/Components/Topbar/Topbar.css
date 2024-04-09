@@ -116,4 +116,11 @@
     transform: rotateZ(-45deg) translate(-5px, 5px);
   }
   
-  
+  body.dark .MuiDataGrid-main .css-204u17-MuiDataGrid-main {
+  background-color: #fff !important;
+  }
+
+  body .MuiDataGrid-main .css-204u17-MuiDataGrid-main {
+  background-color: #000 !important;
+  }
+

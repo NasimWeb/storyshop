@@ -122,7 +122,7 @@ export default function Products() {
     <div className="bg-zinc-900  sm:w-[370px] lg:w-full" style={{   width: '100%' ,overflow: "auto", height :'100vh' }}>
       <div className="grid-data"  style={{  width: '100%', overflow: "auto", height :'100%' }}>
       <DataGrid
-        className="text-white bg-zinc-800 w-full"
+        className="dark:text-white dark:bg-zinc-800 bg-white text-dark w-full"
         rows={searchData ? searchData : data}
         columns={columns}
         initialState={{

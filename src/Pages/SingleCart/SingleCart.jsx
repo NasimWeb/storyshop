@@ -60,17 +60,18 @@ export default function SingleCart() {
         sessionStorage.setItem('products_cart',products)
     },[cartId,userId,date,products])
 
+
+
    
   return (
-    <div style={{ background: "#09090b" }} className="grid grid-cols-12 gap-2">
-    <div
-      style={{ background: "#09090b" }}
-      className="p-4 col-span-12 lg:col-span-9 "
+    <div  className="grid grid-cols-12 gap-2 dark:bg-black bg-zinc-100">
+    <div  
+      className="p-4 col-span-12 lg:col-span-9  dark:bg-black bg-zinc-100"
     >
-      <h1 className="font-bold text-3xl text-white">Cart Edit</h1>
+      <h1 className="font-bold text-3xl dark:text-white text-dark">Cart Edit</h1>
 
       <form
-        className="bg-zinc-900 my-8 flex flex-col flex-wrap rounded-xl p-2"
+        className="dark:bg-zinc-900 bg-white text-black dark:text-white my-8 flex flex-col flex-wrap rounded-xl p-2"
         action=""
       >
         <h1 className="text-white  font-bold text-xl mb-5">General Info</h1>
@@ -135,10 +136,10 @@ export default function SingleCart() {
                   <ListItemAvatar>
                     <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
                   </ListItemAvatar>
-                  <ListItemText className='text-white'
+                  <ListItemText className='dark:text-white text-black'
                     primary={`quantity: ${product.quantity}`}
                     secondary={
-                      <React.Fragment className='text-white'>
+                      <React.Fragment className='dark:text-white text-black'>
                         <Typography
                           sx={{ display: 'inline' }}
                           component="span"
@@ -147,7 +148,7 @@ export default function SingleCart() {
                         >
                           
                         </Typography>
-                        <p className='text-white'>{` productId : ${product.productId}`}</p>
+                        <p className='dark:text-white text-black'>{` productId : ${product.productId}`}</p>
                       </React.Fragment>
                     }
                   />
@@ -167,8 +168,8 @@ export default function SingleCart() {
 
     
 
-      <div className="bg-zinc-900 my-8 flex flex-col flex-wrap rounded-xl p-2">
-        <h1 className="font-bold text-3xl text-white my-5">Image</h1>
+      <div className="dark:bg-zinc-900 bg-white my-8 flex flex-col flex-wrap rounded-xl p-2">
+        <h1 className="font-bold text-3xl dark:text-white text-black my-5">Image</h1>
         <div className="mt-2 flex justify-center rounded-lg border border-dashed border-zinc-500/25 px-6 py-10 dark:border-zinc-500/50">
           <div className="mt-2 flex flex-col justify-center rounded-lg  px-6 py-10 dark:border-zinc-500/50">
             <PhotoSizeSelectActualOutlinedIcon
@@ -200,7 +201,7 @@ export default function SingleCart() {
       </div>
     </div>
 
-    <div className="col-span-12 sticky top-36 lg:col-span-3  bg-zinc-900 mt-20 flex flex-col flex-wrap rounded-xl p-4 h-fit">
+    <div className="col-span-12 sticky top-36 lg:col-span-3  dark:bg-zinc-900 bg-white mt-20 flex flex-col flex-wrap rounded-xl p-4 h-fit">
       <h1 className="text-white font-bold text-xl mb-5">Preview</h1>
 
       <img

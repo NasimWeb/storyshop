@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Topbar from "./Components/Topbar/Topbar";
 import Sidebar from "./Components/Sidebar/Sidebar";
@@ -9,6 +9,7 @@ import ToggleSidebarState from "./Context/ToggleSidebarState";
 import searchDataValue from "./Context/SearchData";
 import AdminUser from "./Context/Athorization";
 import Login from "./Pages/Login/Login";
+import darkModeStatus from "./Context/DarkmodeContext";
 
 function App() {
   const router = useRoutes(routes);
@@ -17,12 +18,19 @@ function App() {
   const [searchData, setSearchData] = useState(null);
   const [isShowSidebar, setIsShowSidebar] = useState(false);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [theme , setTheme] = useState('dark')
   
+  useEffect(()=>{
+    localStorage.setItem('theme',theme)
+  },[theme])
 
+
+  
 
   return (
     <>
     
+    <darkModeStatus.Provider value={{theme, setTheme}}>
     <AdminUser.Provider
       value={{setIsUserLoggedIn}}
     >
@@ -37,7 +45,7 @@ function App() {
                   isShowSidebar={isShowSidebar}
                   setIsShowSidebar={setIsShowSidebar}
                 />
-                <div className="flex-[7_2_0%] flex flex-col bg-zinc-900 flex-wrap">
+                <div className="flex-[7_2_0%] flex flex-col dark:bg-zinc-900 bg-white flex-wrap">
                   <Topbar
                     isShowSidebar={isShowSidebar}
                     setIsShowSidebar={setIsShowSidebar}
@@ -53,6 +61,7 @@ function App() {
         </ToggleSidebarState.Provider>
       </DateLong.Provider>
     </AdminUser.Provider>
+    </darkModeStatus.Provider>
     </>
   );
 }

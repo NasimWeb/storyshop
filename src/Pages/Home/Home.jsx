@@ -22,11 +22,12 @@ export default function Home() {
     const [showTooltipForWhat , setShowTooltipForWhat] = useState(null)
     const datelong = useContext(DateLong)
 
+
     
     
   return (
     <>
-    <div className="boxs bg-black px-3 py-2 flex gap-2 justify-center  flex-wrap md:flex-nowrap ">
+    <div className="boxs dark:bg-black bg-zinc-100 px-3 py-2 flex gap-2 justify-center  flex-wrap md:flex-nowrap ">
     <SaleBoxs tooltipTitle={'Total sales amount'}  >
     <div className="flex flex-col gap-2 ">
       <div className="relative">
@@ -43,7 +44,7 @@ export default function Home() {
           <Tooltip TooltipTitle={'Total sales amount'} isShowTooltip={isShowTooltip} />
         ) : ''}         
       </div>
-      <div className="text-3xl font-semibold text-white text-left">238K</div>
+      <div className="text-3xl font-semibold dark:text-white text-black text-left">238K</div>
       <div className="flex">
         <div
           data-component-name="Balance"
@@ -61,7 +62,7 @@ export default function Home() {
     <div className="flex flex-col gap-2 ">
       <div className="relative">
       <div className="flex w-12 h-12 p-4 items-center justify-center rounded-full bg-emerald-500">
-       <WineBarIcon className='text-white' />
+       <WineBarIcon className='dark:text-white text-black' />
       </div>
       <div className="flex gap-2 "> 
         <span className="text-zinc-500 span">Period: {datelong.defaultRecordLong } / Campaigns</span>
@@ -75,7 +76,7 @@ export default function Home() {
           ) : ''
         }          
       </div>
-      <div className="text-3xl font-semibold text-white text-left">325</div>
+      <div className="text-3xl font-semibold dark:text-white text-black text-left">325</div>
       <div className="flex">
         <div
           data-component-name="Balance"
@@ -107,7 +108,7 @@ export default function Home() {
           ) : ''
         }        
       </div>
-      <div className="text-3xl font-semibold text-white text-left">4128</div>
+      <div className="text-3xl font-semibold dark:text-white text-black text-left">4128</div>
       <div className="flex">
         <div
           data-component-name="Balance"
@@ -139,7 +140,7 @@ export default function Home() {
           ) : ''
         }          
       </div>
-      <div className="text-3xl font-semibold text-white text-left">86</div>
+      <div className="text-3xl font-semibold dark:text-white text-black text-left">86</div>
       <div className="flex">
         <div
           data-component-name="Balance"
@@ -154,11 +155,11 @@ export default function Home() {
     </div>
     </SaleBoxs>
     </div>
-    <div className='bg-black  px-3 flex gap-2 items-center flex-wrap '>
+    <div className='dark:bg-black bg-zinc-100   px-3 flex gap-2 items-center flex-wrap '>
     <Chart />
     <Comments />
     </div>
-    <div className='bg-black px-3 py-2 flex gap-2  flex-wrap xl:flex-nowrap'>
+    <div className='dark:bg-black bg-zinc-100 px-3 py-2 flex gap-2  flex-wrap xl:flex-nowrap'>
       <PopalurProduct />
        <TimeLine />
     </div>

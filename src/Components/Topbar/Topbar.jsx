@@ -28,6 +28,7 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import CloseIcon from "@mui/icons-material/Close";
 import searchDataValue from "../../Context/SearchData";
+import darkModeStatus from "../../Context/DarkmodeContext";
 
 
 
@@ -40,8 +41,9 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
   const {searchData, setSearchData} = useContext(searchDataValue);
   const [fontCountSize , setFountCountSize] = useState(14);
   const [ isShowModalSetting,setIsShowModalSetting] = useState(false)
+  const {theme , setTheme} = useContext(darkModeStatus)
 
-
+  
 
   const [selectedRange, setSelectedRange] = useState([
     {
@@ -50,6 +52,33 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
       key: "selection",
     },
   ]);
+
+
+  const handleDarkMode = () => {
+    setTheme('dark')
+    document.body.classList.add('dark')
+    localStorage.setItem('theme',theme)
+  }
+
+  const handleLightMode = () => {
+    setTheme('light')
+    document.body.classList.remove('dark')
+    localStorage.setItem('theme',theme)
+  }
+
+  const handleSystemMode = () => {
+    if ( window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark')
+      document.body.classList.add('dark')
+    } else {
+      setTheme('light')
+      document.body.classList.add('light')
+    }
+  }
+  
+
+
+
 
   const [isShowDatePicker, setIsShowDatePicker] = useState(false);
   const [activeItem, setActiveItem] = useState("Day");
@@ -83,6 +112,9 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
       );
     }
   };
+
+
+  
 
   const allProducts = useSelector((state) => state.products);
   const allCarts = useSelector((state) => state.carts);
@@ -150,14 +182,15 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
       {
         `
         body {
-        font-size: ${fontCountSize}px;
+        font-size: ${fontCountSize}px !important;
+        }
+        body.light {
+            background-color : #fff !important
         }
         `
       }
     </style>
-    <div
-      className={`topbar sticky top-0 z-10 bg-zinc-900/75 backdrop-blur-md p-3 `}
-    >
+    <div className={`topbar bg-white text-dark sticky top-0 z-10 dark:bg-zinc-900/75 backdrop-blur-md p-3 `}>
       <div className="flex justify-between">
         <div className="sale-dashourd">
           <p className=" text-zinc-500 text-[12px]">Pages / Dashboard</p>
@@ -192,9 +225,9 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
                </div>
                <p className="ml-3 mb-2">Dark mode:</p>
                <div className="flex gap-4 ml-3"> 
-               <i class="fa-solid fa-moon"></i>
-               <i class="fa-solid fa-sun"></i>
-               <i class="fa-solid fa-laptop"></i>
+               <i class="fa-solid fa-moon text-zinc-500" onClick={() => handleDarkMode()}></i>
+               <i class="fa-solid fa-sun text-zinc-500" onClick={() => handleLightMode()}></i>
+               <i class="fa-solid fa-laptop text-zinc-500"  onClick={() => handleSystemMode()}></i>
                </div>
 
             </div>
@@ -237,18 +270,18 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
           </div>
 
       {location.pathname === "/*/*" ? (
-        <div className="searcharea bg-zinc-900 py-3 px-2">
+        <div className="searcharea dark:bg-zinc-900 bg-white text-white py-3 px-2">
           <div className="flex xl:justify-between flex-wrap items-center">
             <div className="relative flex items-center">
               <div className="absolute left-0 mr-5 top-2 px-2 flex items-center">
                 <SearchOutlinedIcon
                   style={{ fontSize: "15px" }}
-                  className="text-xs text-zinc-900"
+                  className="text-xs text-white"
                 />
               </div>
             </div>
             <Button variant="contained" className="rounded-full">
-              <AddOutlinedIcon style={{ fontSize: "20px" }} />
+              <AddOutlinedIcon  style={{ fontSize: "20px" , fill:'#fff' }} />
               Save
             </Button>
           </div>
@@ -258,7 +291,7 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
       )}
 
       {location.pathname === "/" ? (
-        <div className="date sticky top-[var(--header-height)] z-[9] flex flex-wrap justify-between gap-4 border-b border-zinc-300/25   py-4 backdrop-blur-md dark:border-zinc-800/50 dark:bg-zinc-900/75 dark:text-white">
+        <div className="date sticky top-[var(--header-height)] z-[9] flex flex-wrap justify-between gap-4 border-b border-zinc-300/25   py-4 backdrop-blur-md bg-white dark:border-zinc-800/50 dark:bg-zinc-900/75 dark:text-white">
           <div
             data-component-name="Subheader/SubheaderLeft"
             className="flex flex-wrap items-center gap-4 md:me-auto"
@@ -339,7 +372,7 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
       ) : (
         <>
           {location.pathname.match(/^\/\w+\/\d+$/) ? (
-            <div className="searcharea bg-zinc-900 py-3 px-2">
+            <div className="searcharea dark:bg-zinc-900 bg-white py-3 px-2">
               <div className="flex justify-between items-center">
                 <div className="relative flex items-center">
                   <Breadcrumb
@@ -357,7 +390,7 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
               </div>
             </div>
           ) : (
-            <div className="searcharea bg-zinc-900 py-3 px-2">
+            <div className="searcharea dark:bg-zinc-900 bg-white py-3 px-2">
               <div className="flex xl:justify-between flex-wrap items-center">
                 <div className="relative flex items-center">
                   <div className="absolute left-0 mr-5 top-2 px-2 flex items-center">
@@ -379,7 +412,7 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
                     type="text"
                     value={searchValue}
                     placeholder="search..."
-                    className="search-input w-80 bg-zinc-800 relative p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+                    className="search-input w-80 dark:bg-zinc-800 bg-white relative p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
                   />
                   {isShowListSearch && (
                     <div className="absolute right-0 cursor-pointer">

@@ -95,29 +95,29 @@ export default function SingleProduct() {
   }, [title, id, category, price, image, desc, rate, count]);
 
 
-
+  
   
 
   return (
     
-    <div style={{ background: "#09090b" }} className="grid grid-cols-12 gap-2">
+    <div  className="grid grid-cols-12 gap-2 dark:bg-black bg-zinc-100">
       <div
-        style={{ background: "#09090b" }}
-        className="p-4 col-span-12 lg:col-span-9 "
+        
+        className="p-4 col-span-12 lg:col-span-9 dark:bg-black bg-zinc-100"
       >
-        <h1 className="font-bold text-3xl text-white">Product Edit</h1>
+        <h1 className="font-bold text-3xl dark:text-white text-black">Product Edit</h1>
 
         <form
-          className="bg-zinc-900 my-8 flex flex-col flex-wrap rounded-xl p-2"
+          className="dark:bg-zinc-900 bg-white my-8 flex flex-col flex-wrap rounded-xl p-2"
           action=""
         >
-          <h1 className="text-white  font-bold text-xl mb-5">General Info</h1>
+          <h1 className="text-white font-bold text-xl mb-5">General Info</h1>
 
           <div className="grid grid-cols-12   gap-4">
             <div className="col-span-12 text-white  lg:col-span-6 ">
               <label
                 htmlFor="ID"
-                className="text-sm mb-2 inline-block w-full cursor-pointer"
+                className="text-sm mb-2 inline-block w-full cursor-pointer text-black dark:text-white"
               >
                 ID
               </label>
@@ -127,13 +127,13 @@ export default function SingleProduct() {
                 value={id}
                 onChange={(e) => setId(e,target.value)}
                 disabled
-                className="w-full disabled:border-zinc-600 disabled:opacity-50 disabled:shadow-none search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+                className="w-full disabled:border-zinc-600 disabled:opacity-50 disabled:shadow-none search-input dark:bg-zinc-800  bg-zinc-700 p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
               />
             </div>
             <div className="col-span-12 text-white  lg:col-span-6">
               <label
                 htmlFor="Title"
-                className="text-sm mb-2 inline-block w-full cursor-pointer"
+                className="text-sm mb-2 inline-block w-full cursor-pointer text-black dark:text-white"
               >
                 Title
               </label>
@@ -142,47 +142,47 @@ export default function SingleProduct() {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="title"
-                className="w-full search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+                className="w-full search-input dark:bg-zinc-800 bg-zinc-100 text-black dark:text-white border-zinc-100 focus:text-black p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent dark:border-zinc-800 border-2 rounded-lg"
               />
             </div>
 
             <div className="col-span-12 text-white  ">
-              <label htmlFor="Rate">Count</label>
+              <label htmlFor="Rate" className="text-black dark:text-white">Count</label>
               <input
                 type="text"
                 value={count}
                 onChange={(e) => setCount(e.target.value)}
                 placeholder="Count"
-                className="w-full search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+                className="w-full search-input dark:bg-zinc-800 dark:text-white text-black bg-zinc-100 focus:text-black p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent dark:border-zinc-800 border-zinc-100 border-2 rounded-lg"
               />
             </div>
 
             <div className="col-span-12 lg:col-span-6 text-white ">
-              <label htmlFor="price">Price</label>
+              <label htmlFor="price" className="text-black dark:text-white">Price</label>
               <input
                 type="text"
                 placeholder="price"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
-                className="w-full search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+                className="w-full search-input dark:bg-zinc-800 bg-zinc-100 border-zinc-100 focus:text-black p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 dark:text-white text-black focus:bg-transparent dark:border-zinc-800 border-2 rounded-lg"
               />
             </div>
 
             <div className="col-span-12 lg:col-span-6 text-white ">
-              <label htmlFor="Rate">Rate</label>
+              <label htmlFor="Rate" className="text-black dark:text-white">Rate</label>
               <input
                 type="text"
                 value={rate}
                 onChange={(e) => setRate(e.target.value)}
                 placeholder="Rate"
-                className="w-full search-input bg-zinc-800  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent border-zinc-800 border-2 rounded-lg"
+                className="w-full search-input dark:bg-zinc-800 bg-zinc-100 focus:text-black  p-1 transition-all duration-300 ease-in-out hover:border-blue-500 visible::border-0 focus:border-zinc-800 active:border-zinc-800 focus:bg-transparent dark:text-white text-black dark:border-zinc-800 border-2 rounded-lg"
               />
             </div>
 
             <div className="col-span-12 ">
               {
                 <CKEditor
-                  className="h-auto bg-zinc-900"
+                  className="h-auto dark:bg-zinc-900 bg-zinc-100 dark:text-white text-black "
                   editor={ClassicEditor}
                   data={desc}
                   onChange={(event, editor) => {
@@ -196,13 +196,13 @@ export default function SingleProduct() {
           </div>
         </form>
 
-        <div className="bg-zinc-900 my-8 flex flex-col flex-wrap rounded-xl p-2">
-          <h1 className="font-bold text-xl text-white mb-4">Category & Tag</h1>
-          <h4 className="text-sm text-white">category</h4>
+        <div className="dark:bg-zinc-900 bg-white text-dark dark:text-white my-8 flex flex-col flex-wrap rounded-xl p-2">
+          <h1 className="font-bold text-xl dark:text-white text-black mb-4">Category & Tag</h1>
+          <h4 className="text-sm dark:text-white text-black">category</h4>
           <div className="flex mt-2 flex-wrap">
             {categoriesData.data.map((data) => {
               return (
-                <div className="text-white flex items-center gap-2">
+                <div className="dark:text-white flex items-center gap-2">
                   <input
                     id={data}
                     value={data}
@@ -220,12 +220,12 @@ export default function SingleProduct() {
             })}
           </div>
 
-          <h4 className="text-sm text-white my-4">Tag</h4>
+          <h4 className="text-sm dark:text-white text-black my-4">Tag</h4>
 
           <div className="flex mt-2 flex-wrap">
             {categoriesData.data.map((category) => {
               return (
-                <div className="text-white flex items-center gap-2">
+                <div className="dark:text-white flex items-center gap-2">
                   <input
                     value={category}
                     onChange={(e) => setTagValue(e.target.value)}
@@ -233,15 +233,15 @@ export default function SingleProduct() {
                     type="checkbox"
                     name=""
                   />{" "}
-                  <label className="text-sm mr-2">{category}</label>
+                  <label className="text-sm mr-2 text-black dark:text-white">{category}</label>
                 </div>
               );
             })}
           </div>
         </div>
 
-        <div className="bg-zinc-900 my-8 flex flex-col flex-wrap rounded-xl p-2">
-          <h1 className="font-bold text-3xl text-white my-5">Image</h1>
+        <div className="dark:bg-zinc-900 bg-white my-8 flex flex-col flex-wrap rounded-xl p-2">
+          <h1 className="font-bold text-3xl dark:text-white text-black my-5">Image</h1>
           <div className="mt-2 flex justify-center rounded-lg border border-dashed border-zinc-500/25 px-6 py-10 dark:border-zinc-500/50">
             <div className="mt-2 flex flex-col justify-center rounded-lg  px-6 py-10 dark:border-zinc-500/50">
               <PhotoSizeSelectActualOutlinedIcon
@@ -273,9 +273,8 @@ export default function SingleProduct() {
         </div>
       </div>
 
-      <div className="col-span-12 sticky top-36 lg:col-span-3  bg-zinc-900 mt-20 flex flex-col flex-wrap rounded-xl p-4 h-fit">
-        <h1 className="text-white font-bold text-xl mb-5">Preview</h1>
-
+      <div className="col-span-12 sticky top-36 lg:col-span-3  dark:bg-zinc-900 bg-white dark:text-white mt-20 flex flex-col flex-wrap rounded-xl p-4 h-fit">
+        <h1 className="dark:text-white font-bold text-xl mb-5">Preview</h1>
         <img
           src={`${image}`}
           className="mx-100 h-auto w-full"

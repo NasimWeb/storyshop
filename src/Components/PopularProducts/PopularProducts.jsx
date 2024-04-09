@@ -90,7 +90,7 @@ export default function PopalurProduct() {
 
 
   return (
-    <div className='flex flex-1 flex-col hidden lg:block w-full bg-zinc-900 px-3 py-2 rounded-lg'>
+    <div className='flex flex-1 flex-col hidden lg:block w-full dark:bg-zinc-900 dark:text-white bg-white px-3 py-2 rounded-lg'>
      
       <h1 className='text-xl font-bold text-white mb-5'>Popular Products</h1>
 
@@ -99,7 +99,7 @@ export default function PopalurProduct() {
 
       <Box sx={{ height: 400, width: '100%' }}>
       <DataGrid
-      className='text-white'
+      className='dark:text-white text-black'
         rows={data}
         columns={columns}
         initialState={{

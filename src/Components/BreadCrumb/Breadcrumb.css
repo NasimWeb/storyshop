@@ -1,9 +1,9 @@
-.MuiBreadcrumbs-separator  {
+body.dark .MuiBreadcrumbs-separator  {
     color: #fff !important;
 }
 
 
-.css-1gqyz35-MuiTypography-root {
+body.dark .css-1gqyz35-MuiTypography-root {
     color: #fff !important;
 }
 

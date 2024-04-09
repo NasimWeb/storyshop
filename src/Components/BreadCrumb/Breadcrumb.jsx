@@ -28,10 +28,10 @@ export default function Breadcrumb({current}) {
     <div>
        <div role="presentation" onClick={handleClick}>
       <Breadcrumbs aria-label="breadcrumb">
-        <p className='text-white text-zinc-400 text-sm  cursor-pointer hover:text-blue-500 active:text-blue-500 transition-all duration-300 ease-in-out' onClick={() => prevRout()} underline="hover" color="#fff" >
-        <i class="fa-solid fa-arrow-left mr-1"></i> back to List
+        <p className=' text-zinc-400  text-sm  cursor-pointer hover:text-blue-500 active:text-blue-500 transition-all duration-300 ease-in-out' onClick={() => prevRout()} underline="hover" color="#fff" >
+        <i class="fa-solid fa-arrow-left mr-1 dark:text-white text-black"></i> back to List
         </p>
-        <Typography color="white">{current}</Typography>
+        <Typography ><p className='dark:text-white text-black'>{current}</p></Typography>
       </Breadcrumbs>
     </div>
     </div>

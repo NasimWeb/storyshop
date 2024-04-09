@@ -1,14 +1,14 @@
- .ck-toolbar_grouping{
+ body.dark .ck-toolbar_grouping{
     background: rgb(24 24 27) !important;
     color: #fff !important;
 }
 
 
- .ck-editor__editable_inline {
+ body.dark .ck-editor__editable_inline {
     background: rgb(24 24 27) !important;
     color: #fff !important;
 }
 
-.ck-button {
+body.dark .ck-button {
     color: #fff !important;
 }

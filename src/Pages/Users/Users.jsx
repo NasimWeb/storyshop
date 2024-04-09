@@ -157,7 +157,7 @@ export default function Users() {
   ];
 
   return (
-    <div className="bg-zinc-900 flex flex-col gap-10">
+    <div className="dark:bg-zinc-900 bg-white flex flex-col gap-10">
       <div
         className="grid-data"
         style={{ width: "100%", overflow: "auto", height: "100%" }}
@@ -165,7 +165,7 @@ export default function Users() {
         {data.length ? (
           <Box sx={{ height: "100vh", width: "100%" }}>
             <DataGrid
-              className="text-white bg-zinc-800"
+            className="dark:text-white dark:bg-zinc-800  bg-white text-dark"
               rows={searchData ? searchData : data}
               columns={columns}
               initialState={{
@@ -181,7 +181,7 @@ export default function Users() {
             />
           </Box>
         ) : (
-          <p className="text-white">
+          <p className="dark:text-white text-black bg-white">
             this API limiited you need to turn on your vpn to see users
           </p>
         )}
