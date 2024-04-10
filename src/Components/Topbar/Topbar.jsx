@@ -229,7 +229,6 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
                <i class="fa-solid fa-sun text-zinc-500" onClick={() => handleLightMode()}></i>
                <i class="fa-solid fa-laptop text-zinc-500"  onClick={() => handleSystemMode()}></i>
                </div>
-
             </div>
             <span className="absolute end-0 top-0 flex h-3 w-3">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
@@ -271,7 +270,7 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
 
       {location.pathname === "/*/*" ? (
         <div className="searcharea dark:bg-zinc-900 bg-white text-white py-3 px-2">
-          <div className="flex xl:justify-between flex-wrap items-center">
+          <div className="flex gap-2 xl:justify-between flex-wrap items-center">
             <div className="relative flex items-center">
               <div className="absolute left-0 mr-5 top-2 px-2 flex items-center">
                 <SearchOutlinedIcon
@@ -345,7 +344,7 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
             </div>
           </div>
           <div
-            className="calender flex text-zinc-500 gap-2 hover:text-blue-500 cursor-pointer"
+            className="calender hidden  lg:flex text-zinc-500 gap-2 hover:text-blue-500 cursor-pointer"
             onClick={() => setIsShowDatePicker(!isShowDatePicker)}
           >
             <CalendarMonthOutlinedIcon />
@@ -373,7 +372,7 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
         <>
           {location.pathname.match(/^\/\w+\/\d+$/) ? (
             <div className="searcharea dark:bg-zinc-900 bg-white py-3 px-2">
-              <div className="flex justify-between items-center">
+              <div className="flex gap-2 justify-between items-center">
                 <div className="relative flex items-center">
                   <Breadcrumb
                     current={location.pathname.slice(1, 8).replace("/", "")}
@@ -391,7 +390,7 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
             </div>
           ) : (
             <div className="searcharea dark:bg-zinc-900 bg-white py-3 px-2">
-              <div className="flex xl:justify-between flex-wrap items-center">
+              <div className="flex gap-2 xl:justify-between flex-wrap items-center">
                 <div className="relative flex items-center">
                   <div className="absolute left-0 mr-5 top-2 px-2 flex items-center">
                     <SearchOutlinedIcon

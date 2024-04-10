@@ -83,10 +83,15 @@
     width: 100%;
     cursor: pointer;
   }
-  .line {
+  body.dark .line {
     transition: 0.5s;
     stroke-width: 6px;
     stroke: white;
+  }
+  body .line {
+    transition: 0.5s;
+    stroke-width: 6px;
+    stroke: black;
   }
   .lineTop {
     stroke-dasharray: 40 40;
