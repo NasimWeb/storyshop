@@ -10,30 +10,42 @@ import searchDataValue from "./Context/SearchData";
 import AdminUser from "./Context/Athorization";
 import Login from "./Pages/Login/Login";
 import darkModeStatus from "./Context/DarkmodeContext";
+import getCookieValue from "./Hooks/GetCookieValue";
+
 
 function App() {
+
+  const usernameCookie = getCookieValue('usernameAdmin')
+  const passwordCookie = getCookieValue('passwordAdmin')
+
+
   const router = useRoutes(routes);
   const [defaultRecordLong, setDefaultRecordLong] = useState("Day");
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [searchData, setSearchData] = useState(null);
   const [isShowSidebar, setIsShowSidebar] = useState(false);
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(usernameCookie === 'nasim-rbi'  & passwordCookie === '12345678' ? true : false);
   const [theme , setTheme] = useState('dark')
   
   useEffect(()=>{
     localStorage.setItem('theme',theme)
   },[theme])
 
-
   
+  useEffect(()=>{
+    if(usernameCookie & passwordCookie) {
+      setIsUserLoggedIn(true)
+    }
+  },[])
+
+
+
 
   return (
     <>
     
     <darkModeStatus.Provider value={{theme, setTheme}}>
-    <AdminUser.Provider
-      value={{setIsUserLoggedIn}}
-    >
+    <AdminUser.Provider value={{setIsUserLoggedIn}}>
       <DateLong.Provider value={{ defaultRecordLong, setDefaultRecordLong }}>
         <ToggleSidebarState.Provider
           value={{ toggleSidebar, setToggleSidebar }}

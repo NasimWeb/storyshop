@@ -358,7 +358,7 @@ export default function Topbar({isShowSidebar , setIsShowSidebar}) {
             <ExpandMoreOutlinedIcon />
           </div>
           <div
-            className={`p-6 date-picker bg-zinc-800 border border-zinc-950/75 border-1 ${
+            className={`p-6 date-picker  bg-zinc-800 border border-zinc-950/75 border-1 ${
               isShowDatePicker ? "" : "hidden"
             }`}
           >

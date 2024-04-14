@@ -1,8 +1,10 @@
-import React, { useState  , useContext} from "react";
+import React, { useState  , useContext, useEffect} from "react";
 import "./Login.css";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form"
 import AdminUser from "../../Context/Athorization";
+import setCookie from "../../Hooks/SetCookie";
+import getCookieValue from "../../Hooks/GetCookieValue";
 
 
 export default function Login() {
@@ -19,14 +21,23 @@ export default function Login() {
  
 const { setIsUserLoggedIn} = useContext(AdminUser)
 
+useEffect(()=>{
+  const usernameCookie = getCookieValue('usernameAdmin')
+  const passwordCookie = getCookieValue('passwordAdmin')
+  if(usernameCookie & passwordCookie) {
+    setIsUserLoggedIn(true)
+  }
+},[])
+
 
 
 
   const signIn = (data) => {
 
-
     if (data.username === "nasim-rbi" && data.password === "12345678") {
 		setIsUserLoggedIn(true)
+    setCookie('usernameAdmin', 'nasim-rbi' , 1)
+    setCookie('passwordAdmin', '12345678' , 1)
 		Swal.fire({
 			position: "center",
 			icon: "success",
@@ -51,8 +62,8 @@ const { setIsUserLoggedIn} = useContext(AdminUser)
 
   return (
     <div
-      className="container"
-      style={{ background: " rgba(17, 24, 39, 1)", height: "100vh" }}
+      
+      style={{ background: " rgba(17, 24, 39, 1)", height: "100vh" , width : '100vw' }}
     >
       <div
         className="flex justify-center "
