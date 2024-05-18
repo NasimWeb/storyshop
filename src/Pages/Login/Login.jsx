@@ -61,13 +61,13 @@ useEffect(()=>{
 
 
   return (
-    <div
+    <div className="flex justify-center items-center"
       
       style={{ background: " rgba(17, 24, 39, 1)", height: "100vh" , width : '100vw' }}
     >
       <div
-        className="flex justify-center "
-        style={{ alignItems: "center", height: "100%" }}
+        className="flex justify-center items-center"
+        style={{ }}
       >
         <div className="form-container">
           <p className="title">Login</p>
